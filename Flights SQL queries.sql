@@ -43,7 +43,13 @@ SET Delay_category = CASE
                       ELSE '60+ min'
                     END;
 
-SELECT * FROM Flights_NoCancelled_Table
+SELECT 
+    Airline,
+    COUNT(CASE WHEN Delay_status = 'Delayed' THEN 1 END) AS TotalDelayedFlights
+FROM Flights_NoCancelled_Table
+GROUP BY Airline
+ORDER BY TotalDelayedFlights DESC;
+
 
 -- 1) Average departure delay by airline
 SELECT airline, AVG(departure_delay) AS Avg_DepDelay
@@ -69,7 +75,7 @@ FROM Flights_NoCancelled_Table
 GROUP BY Airline;
 
 
--- 4) Delay by day of the week
+-- 4) Flight Delay by day
 
 SELECT 
     Airline,
@@ -87,7 +93,31 @@ ORDER BY
     Airline,
     DATEPART(WEEKDAY, actual_departure);
 
----route based
+-- 5) Flight distribtion by hour
+
+SELECT 
+    DATEPART(HOUR, actual_departure) AS HourOfDay,
+    CASE 
+        WHEN cancelled = 1 THEN 'Cancelled'
+        WHEN departure_delay = 0 THEN 'On-Time'
+        WHEN departure_delay BETWEEN 1 AND 15 THEN '0–15 min Delay'
+        WHEN departure_delay BETWEEN 16 AND 60 THEN '16–60 min Delay'
+        ELSE '60+ min Delay'
+    END AS Category,
+    COUNT(*) AS TotalFlights
+FROM flights
+GROUP BY 
+    DATEPART(HOUR, actual_departure),
+    CASE 
+        WHEN cancelled = 1 THEN 'Cancelled'
+        WHEN departure_delay = 0 THEN 'On-Time'
+        WHEN departure_delay BETWEEN 1 AND 15 THEN '0–15 min Delay'
+        WHEN departure_delay BETWEEN 16 AND 60 THEN '16–60 min Delay'
+        ELSE '60+ min Delay'
+    END
+ORDER BY HourOfDay, Category;
+
+6) -- Flight delay route based
 SELECT 
     Airline,
     origin,
