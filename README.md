@@ -6,11 +6,11 @@ Using SQL and Power BI, I analyzed flight performance data to identify delay pat
 1. Optimize flight schedules during peak traffic hours
 2. Improve aircraft turnaround processes for busy routes
 
-## Bussiness Problem
+## Business Problem
 Airline operations are heavily influenced by flight punctuality, as delays and cancellations can lead to increased costs, and dissatisfied passengers. Understanding patterns in flight delays and cancellations is critical for improving customer experience and minimizing operational losses. The primary challenge is to identify which flights, routes, or airlines are most prone to delays or cancellations and quantify the impact on overall performance. 
 
 ## Methodology
-1. Clean and standardize flight data, handle missing values, and prepare for analysis.
+1. Clean and standardize flight data and prepare for analysis.
 2. Identify key matrics such as delay duration, delay rate per hour, peak-hour indicators, and route congestion metrics.
 3. Analyze trends and patterns in delays and cancellations by airline, route, day, and hour.
 4. Build interactive dashboards to visualize delays, cancellation rates, and high-risk routes for easy decision-making.
