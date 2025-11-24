@@ -15,10 +15,27 @@ Airline operations are heavily influenced by flight punctuality, as delays and c
 3. Analyze trends and patterns in delays and cancellations by airline, route, day, and hour.
 4. Build interactive dashboards to visualize delays, cancellation rates, and high-risk routes for easy decision-making.
 
+## Key Metrics
+
+1. Total Flights
+2. Delayed Flights
+3. Delay Rate (%)
+4. Cancellation Rate (%)
+5. Peak-Hour Congestion
+6. High-Risk Routes
+
 ## Skills
-SQL: CTEs, Aggregate functions, CASE Statements, Date & Time Functions
-PowerBI: DAX, Writing functions, ETL, Data visualisation, Data Modelling
+- SQL: CTEs, Aggregate functions, CASE Statements, Date & Time Functions
+- Power BI: DAX, Writing functions, ETL, Data visualisation, Data Modelling
 
 ## Result and Recommendation
 The analysis identified peak hours and high-traffic routes with the highest delay and cancellation rates. Key metrics such as overall delay rate, route-specific delay rates, and cancellation percentages were calculated, revealing patterns like specific airlines or days of the week prone to higher disruptions. Interactive dashboards provided decision-makers with clear visualization of critical operational bottlenecks.
+
 To reduce delays and cancellations, flight scheduling should be optimized during peak hours, and additional resources such as crew and gates should be allocated to high-traffic routes during congestion periods.
+
+### How to Use
+1. Clone the repository.
+2. Load the flight dataset into Power BI or SQL environment.
+3. Use provided SQL queries to clean, transform, and calculate key metrics.
+4. Open the Power BI dashboard to explore interactive visuals.
+
